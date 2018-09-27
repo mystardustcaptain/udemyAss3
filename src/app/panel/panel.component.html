@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <button class='btn btn-primary' (click)='onClickButton()'>Display Details</button>
+  </div>
+  <div class="row">
+    <p>{{ displayText }}</p>
+  </div>
+  <div class="container">
+    <p
+      *ngFor='let record of historyRecords; let i = index'
+      [ngStyle]='{backgroundColor: getHistoryRecordBackgroundColor(i)}'
+      [ngClass]='{whiteText: i >= 4}'>{{ record }}
+    </p>
+  </div>
+</div>
